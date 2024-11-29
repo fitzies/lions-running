@@ -126,11 +126,11 @@ export default function Page() {
         />
         <Button
           disabled={
+            loading ||
             !image ||
             !formState.name ||
             !formState.company ||
-            !formState.mileage ||
-            loading
+            !formState.mileage
           }
         >
           {loading ? "Submitting..." : "Submit"}
