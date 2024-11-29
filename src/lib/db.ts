@@ -12,7 +12,7 @@ export const createRun = async (
   mileage: number,
   companyId: number,
   blob: string,
-  callback?: (run: Run) => any
+  callback?: (run: Run) => void
 ) => {
   const run = await prisma.run.create({
     data: {
