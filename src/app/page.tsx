@@ -56,6 +56,7 @@ export default async function Page() {
                     <TableCell>{company.runs.length}</TableCell>
                     <TableCell className="text-right">
                       {company.runs.reduce((sum, run) => sum + run.mileage, 0)}
+                      km
                     </TableCell>
                   </TableRow>
                 );

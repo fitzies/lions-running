@@ -3,6 +3,7 @@
 import { redirect } from "next/navigation";
 import { createRun } from "./db";
 import prisma from "./prisma";
+import { revalidatePath } from "next/cache";
 
 export const submitRun = async (data: FormData) => {
   const name = data.get("name")?.toString();
@@ -24,6 +25,7 @@ export const submitRun = async (data: FormData) => {
     console.log(
       `A new run was clocked by ${run.user}, for ${run.mileage}km(s)`
     );
+    revalidatePath("/");
     redirect("/");
   });
 
